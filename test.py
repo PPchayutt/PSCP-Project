@@ -1,2 +1,2 @@
-x= 1+1
-print("x")
+x= "game"
+print(x)
