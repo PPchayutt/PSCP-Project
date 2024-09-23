@@ -1,2 +1,3 @@
 x= "game"
-print(x)
+cat = 11
+print(x*cat)
