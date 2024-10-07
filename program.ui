@@ -415,7 +415,7 @@ background-color: rgb(184, 239, 255);</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>638</width>
+        <width>642</width>
         <height>179</height>
        </rect>
       </property>
@@ -459,14 +459,14 @@ background-color: rgb(184, 239, 255);</string>
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>380</x>
+       <x>360</x>
        <y>10</y>
        <width>241</width>
        <height>51</height>
       </rect>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;calculate pet age&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Pet Age Calculator&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
@@ -494,16 +494,6 @@ background-color: rgb(184, 239, 255);</string>
    <zorder>output_frame</zorder>
    <zorder>frame_3</zorder>
    <zorder>label_14</zorder>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>951</width>
-     <height>26</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
