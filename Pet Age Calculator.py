@@ -1,5 +1,1 @@
-"""PAC"""
-def main():
-    """main function"""
-
-main()
+"""Pet Age Calculator"""
