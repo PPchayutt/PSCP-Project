@@ -74,7 +74,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>:/gui/logo.png</pixmap>
+            <pixmap resource="../../../Desktop/resources.qrc">:/gui/logo.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -94,7 +94,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../../../Desktop/resources.qrc">
              <normaloff>:/gui/dog.png</normaloff>:/gui/dog.png</iconset>
            </property>
            <property name="checkable">
@@ -111,7 +111,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../../../Desktop/resources.qrc">
              <normaloff>:/gui/cat.png</normaloff>:/gui/cat.png</iconset>
            </property>
            <property name="checkable">
@@ -143,7 +143,7 @@ QPushButton:checked{
           <string/>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="../../../Desktop/resources.qrc">
            <normaloff>:/gui/exit.png</normaloff>:/gui/exit.png</iconset>
          </property>
         </widget>
@@ -201,7 +201,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>:/gui/bar.png</pixmap>
+            <pixmap resource="../../../Desktop/resources.qrc">:/gui/bar.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -235,7 +235,7 @@ QPushButton:checked{
             <string>DOG</string>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../../../Desktop/resources.qrc">
              <normaloff>:/gui/dog.png</normaloff>:/gui/dog.png</iconset>
            </property>
            <property name="checkable">
@@ -252,7 +252,7 @@ QPushButton:checked{
             <string>CAT</string>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../../../Desktop/resources.qrc">
              <normaloff>:/gui/cat.png</normaloff>:/gui/cat.png</iconset>
            </property>
            <property name="checkable">
@@ -284,7 +284,7 @@ QPushButton:checked{
           <string>Exit</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="../../../Desktop/resources.qrc">
            <normaloff>:/gui/exit.png</normaloff>:/gui/exit.png</iconset>
          </property>
         </widget>
@@ -327,7 +327,7 @@ QPushButton:checked{
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>:/gui/cat.png</pixmap>
+               <pixmap resource="../../../Desktop/resources.qrc">:/gui/cat.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -468,7 +468,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../../../Desktop/resources.qrc">
              <normaloff>:/gui/bar.png</normaloff>:/gui/bar.png</iconset>
            </property>
            <property name="checkable">
@@ -525,7 +525,7 @@ QPushButton:checked{
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>:/gui/dog.png</pixmap>
+                 <pixmap resource="../../../Desktop/resources.qrc">:/gui/dog.png</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -672,15 +672,14 @@ QPushButton:checked{
      <x>0</x>
      <y>0</y>
      <width>1212</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
-  <include location="resources.qrc"/>
+  <include location="../../../Desktop/resources.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -842,6 +841,6 @@ QPushButton:checked{
      <y>559</y>
     </hint>
    </hints>
-  </connection>
+  </connection>qq
  </connections>
 </ui>
