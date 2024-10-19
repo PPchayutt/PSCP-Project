@@ -1,0 +1,9 @@
+<RCC>
+  <qresource>
+    <file>gui/bar.png</file>
+    <file>gui/cat.png</file>
+    <file>gui/dog.png</file>
+    <file>gui/exit.png</file>
+    <file>gui/logo.png</file>
+  </qresource>
+</RCC>
