@@ -1,0 +1,412 @@
+# -*- coding: utf-8 -*-
+
+import sys
+import math
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+def dog_to_human_age(dog_age):
+    if dog_age <= 2:
+        return dog_age * 10.5
+    else:
+        return 21 + (dog_age - 2) * 4
+
+def cat_to_human_age(cat_age):
+    age_table = {
+        1: 15, 2: 24, 3: 28, 4: 32, 5: 36, 6: 40, 7: 44, 8: 48, 9: 52, 10: 56,
+        11: 60, 12: 64, 13: 68, 14: 72, 15: 76, 16: 80, 17: 84, 18: 88,
+        19: 92, 20: 96, 21: 100, 22: 104, 23: 108, 24: 112, 25: 116
+    }
+    return age_table.get(cat_age, 116)
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1212, 919)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("background-color: rgb(255, 226, 156);")
+        self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_4.setHorizontalSpacing(0)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.icon_only_widget = QtWidgets.QWidget(self.centralwidget)
+        self.icon_only_widget.setStyleSheet("QWidget{\n"
+"    background-color: rgb(204, 142, 55);\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    color:white;\n"
+"    height:30px;\n"
+"    border:none;\n"
+"    border-radius:10px;\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"    background-color: rgb(250, 255, 235);\n"
+"    color: rgb(204, 142, 55);\n"
+"    font-weight:bold;\n"
+"}")
+        self.icon_only_widget.setObjectName("icon_only_widget")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.icon_only_widget)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label = QtWidgets.QLabel(self.icon_only_widget)
+        self.label.setMinimumSize(QtCore.QSize(60, 60))
+        self.label.setMaximumSize(QtCore.QSize(60, 60))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap(":/gui/logo.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.horizontalLayout_2.addWidget(self.label)
+        self.verticalLayout_3.addLayout(self.horizontalLayout_2)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setSpacing(15)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.pushButton = QtWidgets.QPushButton(self.icon_only_widget)
+        self.pushButton.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/gui/dog.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton.setIcon(icon)
+        self.pushButton.setCheckable(True)
+        self.pushButton.setAutoExclusive(True)
+        self.pushButton.setObjectName("pushButton")
+        self.verticalLayout.addWidget(self.pushButton)
+        self.pushButton_2 = QtWidgets.QPushButton(self.icon_only_widget)
+        self.pushButton_2.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/gui/cat.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_2.setIcon(icon1)
+        self.pushButton_2.setCheckable(True)
+        self.pushButton_2.setAutoExclusive(True)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.verticalLayout.addWidget(self.pushButton_2)
+        self.verticalLayout_3.addLayout(self.verticalLayout)
+        spacerItem = QtWidgets.QSpacerItem(20, 516, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_3.addItem(spacerItem)
+        self.pushButton_5 = QtWidgets.QPushButton(self.icon_only_widget)
+        self.pushButton_5.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/gui/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_5.setIcon(icon2)
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.verticalLayout_3.addWidget(self.pushButton_5)
+        self.gridLayout_4.addWidget(self.icon_only_widget, 0, 0, 1, 1)
+        self.widget_3 = QtWidgets.QWidget(self.centralwidget)
+        self.widget_3.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.widget_3.setObjectName("widget_3")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.widget_3)
+        self.gridLayout_3.setHorizontalSpacing(0)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.widget_2 = QtWidgets.QWidget(self.widget_3)
+        self.widget_2.setStyleSheet("background-color: rgb(204, 142, 55);")
+        self.widget_2.setObjectName("widget_2")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.widget_2)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.label_5 = QtWidgets.QLabel(self.widget_2)
+        self.label_5.setMinimumSize(QtCore.QSize(50, 50))
+        self.label_5.setMaximumSize(QtCore.QSize(50, 50))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap(":/gui/cat.png"))
+        self.label_5.setScaledContents(True)
+        self.label_5.setObjectName("label_5")
+        self.horizontalLayout_5.addWidget(self.label_5)
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.label_7 = QtWidgets.QLabel(self.widget_2)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+        self.verticalLayout_7.addWidget(self.label_7)
+        self.spinBox_2 = QtWidgets.QSpinBox(self.widget_2)
+        self.spinBox_2.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.spinBox_2.setObjectName("spinBox_2")
+        self.verticalLayout_7.addWidget(self.spinBox_2)
+        self.horizontalLayout_5.addLayout(self.verticalLayout_7)
+        self.verticalLayout_11.addLayout(self.horizontalLayout_5)
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        spacerItem1 = QtWidgets.QSpacerItem(248, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem1)
+        self.pushButton_8 = QtWidgets.QPushButton(self.widget_2)
+        self.pushButton_8.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.pushButton_8.setObjectName("pushButton_8")
+        self.horizontalLayout_7.addWidget(self.pushButton_8)
+        self.verticalLayout_11.addLayout(self.horizontalLayout_7)
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.textBrowser_4 = QtWidgets.QTextBrowser(self.widget_2)
+        self.textBrowser_4.setMinimumSize(QtCore.QSize(250, 250))
+        self.textBrowser_4.setMaximumSize(QtCore.QSize(250, 250))
+        self.textBrowser_4.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.textBrowser_4.setObjectName("textBrowser_4")
+        self.horizontalLayout_9.addWidget(self.textBrowser_4)
+        self.textBrowser_6 = QtWidgets.QTextBrowser(self.widget_2)
+        self.textBrowser_6.setObjectName("textBrowser_6")
+        self.horizontalLayout_9.addWidget(self.textBrowser_6)
+        self.verticalLayout_11.addLayout(self.horizontalLayout_9)
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        spacerItem2 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_8.addItem(spacerItem2)
+        self.textBrowser_3 = QtWidgets.QTextBrowser(self.widget_2)
+        self.textBrowser_3.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.textBrowser_3.setObjectName("textBrowser_3")
+        self.verticalLayout_8.addWidget(self.textBrowser_3)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 162, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_8.addItem(spacerItem3)
+        self.verticalLayout_11.addLayout(self.verticalLayout_8)
+        self.gridLayout_3.addWidget(self.widget_2, 1, 1, 1, 1)
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.pushButton_9 = QtWidgets.QPushButton(self.widget_3)
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setWeight(50)
+        self.pushButton_9.setFont(font)
+        self.pushButton_9.setText("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/gui/bar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_9.setIcon(icon3)
+        self.pushButton_9.setCheckable(True)
+        self.pushButton_9.setAutoRepeat(False)
+        self.pushButton_9.setAutoExclusive(False)
+        self.pushButton_9.setObjectName("pushButton_9")
+        self.horizontalLayout_3.addWidget(self.pushButton_9)
+        spacerItem4 = QtWidgets.QSpacerItem(638, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem4)
+        self.gridLayout_3.addLayout(self.horizontalLayout_3, 0, 0, 1, 2)
+        self.widget = QtWidgets.QWidget(self.widget_3)
+        self.widget.setStyleSheet("background-color: rgb(204, 142, 55);")
+        self.widget.setObjectName("widget")
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.widget)
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.label_4 = QtWidgets.QLabel(self.widget)
+        self.label_4.setMinimumSize(QtCore.QSize(50, 50))
+        self.label_4.setMaximumSize(QtCore.QSize(50, 50))
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap(":/gui/dog.png"))
+        self.label_4.setScaledContents(True)
+        self.label_4.setObjectName("label_4")
+        self.horizontalLayout_4.addWidget(self.label_4)
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.label_6 = QtWidgets.QLabel(self.widget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
+        self.verticalLayout_5.addWidget(self.label_6)
+        self.spinBox_3 = QtWidgets.QSpinBox(self.widget)
+        self.spinBox_3.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.spinBox_3.setObjectName("spinBox_3")
+        self.verticalLayout_5.addWidget(self.spinBox_3)
+        self.horizontalLayout_4.addLayout(self.verticalLayout_5)
+        self.verticalLayout_6.addLayout(self.horizontalLayout_4)
+        self.verticalLayout_10.addLayout(self.verticalLayout_6)
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        spacerItem5 = QtWidgets.QSpacerItem(248, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem5)
+        self.pushButton_7 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_7.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.horizontalLayout_6.addWidget(self.pushButton_7)
+        self.verticalLayout_10.addLayout(self.horizontalLayout_6)
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.textBrowser_2 = QtWidgets.QTextBrowser(self.widget)
+        self.textBrowser_2.setMinimumSize(QtCore.QSize(250, 250))
+        self.textBrowser_2.setMaximumSize(QtCore.QSize(250, 250))
+        self.textBrowser_2.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.textBrowser_2.setObjectName("textBrowser_2")
+        self.horizontalLayout_8.addWidget(self.textBrowser_2)
+        self.textBrowser_5 = QtWidgets.QTextBrowser(self.widget)
+        self.textBrowser_5.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.textBrowser_5.setTabChangesFocus(False)
+        self.textBrowser_5.setObjectName("textBrowser_5")
+        self.horizontalLayout_8.addWidget(self.textBrowser_5)
+        self.verticalLayout_10.addLayout(self.horizontalLayout_8)
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        spacerItem6 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_9.addItem(spacerItem6)
+        self.textBrowser_7 = QtWidgets.QTextBrowser(self.widget)
+        self.textBrowser_7.setStyleSheet("background-color: rgb(250, 255, 235);")
+        self.textBrowser_7.setObjectName("textBrowser_7")
+        self.verticalLayout_9.addWidget(self.textBrowser_7)
+        spacerItem7 = QtWidgets.QSpacerItem(20, 162, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_9.addItem(spacerItem7)
+        self.verticalLayout_10.addLayout(self.verticalLayout_9)
+        self.gridLayout_3.addWidget(self.widget, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.widget_3, 0, 2, 1, 1)
+        self.icon_namewidget = QtWidgets.QWidget(self.centralwidget)
+        self.icon_namewidget.setStyleSheet("QWidget{\n"
+"    background-color: rgb(204, 142, 55);\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    color:white;\n"
+"    text-align:left;\n"
+"    height:30px;\n"
+"    border:none;\n"
+"    padding-left:10px;\n"
+"    border-top-left-radius:10px;\n"
+"    border-bottom-left-radius:10px;\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"    background-color: rgb(250, 255, 235);\n"
+"    color: rgb(204, 142, 55);\n"
+"    font-weight:bold;\n"
+"}")
+        self.icon_namewidget.setObjectName("icon_namewidget")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.icon_namewidget)
+        self.verticalLayout_4.setContentsMargins(-1, -1, 0, -1)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setContentsMargins(-1, -1, 20, -1)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.label_2 = QtWidgets.QLabel(self.icon_namewidget)
+        self.label_2.setMinimumSize(QtCore.QSize(60, 60))
+        self.label_2.setMaximumSize(QtCore.QSize(60, 60))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap(":/gui/logo.png"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout.addWidget(self.label_2)
+        self.label_3 = QtWidgets.QLabel(self.icon_namewidget)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_3.setFont(font)
+        self.label_3.setObjectName("label_3")
+        self.horizontalLayout.addWidget(self.label_3)
+        self.verticalLayout_4.addLayout(self.horizontalLayout)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setSpacing(15)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.icon_namewidget)
+        self.pushButton_3.setIcon(icon)
+        self.pushButton_3.setCheckable(True)
+        self.pushButton_3.setAutoExclusive(True)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.verticalLayout_2.addWidget(self.pushButton_3)
+        self.pushButton_4 = QtWidgets.QPushButton(self.icon_namewidget)
+        self.pushButton_4.setIcon(icon1)
+        self.pushButton_4.setCheckable(True)
+        self.pushButton_4.setAutoExclusive(True)
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.verticalLayout_2.addWidget(self.pushButton_4)
+        self.verticalLayout_4.addLayout(self.verticalLayout_2)
+        spacerItem8 = QtWidgets.QSpacerItem(20, 504, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_4.addItem(spacerItem8)
+        self.pushButton_6 = QtWidgets.QPushButton(self.icon_namewidget)
+        self.pushButton_6.setIcon(icon2)
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.verticalLayout_4.addWidget(self.pushButton_6)
+        self.gridLayout_4.addWidget(self.icon_namewidget, 0, 1, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1212, 21))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        self.pushButton_9.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
+        self.pushButton_9.toggled['bool'].connect(self.icon_namewidget.setHidden) # type: ignore
+        self.pushButton_4.toggled['bool'].connect(self.pushButton_2.setChecked) # type: ignore
+        self.pushButton_4.toggled['bool'].connect(self.widget.setHidden) # type: ignore
+        self.pushButton_4.toggled['bool'].connect(self.widget_2.setVisible) # type: ignore
+        self.pushButton_2.toggled['bool'].connect(self.pushButton_4.setChecked) # type: ignore
+        self.pushButton.toggled['bool'].connect(self.pushButton_3.setChecked) # type: ignore
+        self.pushButton_3.toggled['bool'].connect(self.pushButton.setChecked) # type: ignore
+        self.pushButton_3.toggled['bool'].connect(self.widget.setVisible) # type: ignore
+        self.pushButton_3.toggled['bool'].connect(self.widget_2.setHidden) # type: ignore
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+        # Set up spinboxes
+        self.spinBox_2.setMinimum(0)
+        self.spinBox_2.setMaximum(25)
+        self.spinBox_2.setSingleStep(1)
+        
+        self.spinBox_3.setMinimum(0)
+        self.spinBox_3.setMaximum(25)
+        self.spinBox_3.setSingleStep(1)
+
+        # Connect buttons to functions
+        self.pushButton_7.clicked.connect(self.calculate_dog_age)
+        self.pushButton_8.clicked.connect(self.calculate_cat_age)
+        self.pushButton_5.clicked.connect(self.exit_application)
+        self.pushButton_6.clicked.connect(self.exit_application)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Pet Age Calculator"))
+        self.label_7.setText(_translate("MainWindow", "Cat's Age (1-25 Year)"))
+        self.pushButton_8.setText(_translate("MainWindow", "Calculate"))
+        self.label_6.setText(_translate("MainWindow", "Dog's Age (1-25 Year)"))
+        self.pushButton_7.setText(_translate("MainWindow", "Calculate"))
+        self.label_3.setText(_translate("MainWindow", "PAC"))
+        self.pushButton_3.setText(_translate("MainWindow", "DOG"))
+        self.pushButton_4.setText(_translate("MainWindow", "CAT"))
+        self.pushButton_6.setText(_translate("MainWindow", "Exit"))
+
+    def calculate_dog_age(self):
+        dog_age = self.spinBox_3.value()
+        human_age = dog_to_human_age(dog_age)
+        result = f"อายุสุนัข {dog_age} ปี เทียบเท่ากับอายุคน {human_age:.1f} ปี"
+        self.textBrowser_2.setText(result)
+        self.textBrowser_5.setText(f"คำนวณโดยใช้สูตร:\n1-2 ปีแรก: อายุคน = อายุสุนัข * 10.5\nหลังจากนั้น: อายุคน = 21 + (อายุสุนัข - 2) * 4\n\nผลลัพธ์: {result}")
+
+    def calculate_cat_age(self):
+        cat_age = self.spinBox_2.value()
+        human_age = cat_to_human_age(cat_age)
+        result = f"อายุแมว {cat_age} ปี เทียบเท่ากับอายุคน {human_age:.1f} ปี"
+        self.textBrowser_4.setText(result)
+        life_stage = self.get_cat_life_stage(cat_age)
+        self.textBrowser_6.setText(f"ช่วงชีวิต: {life_stage}\n\n{result}")
+
+    def get_cat_life_stage(self, age):
+        if age < 1:
+            return "Kitten (แรกเกิดถึง 1 ปี)"
+        elif age < 2:
+            return "Junior (1 ถึง 2 ปี)"
+        elif age < 6:
+            return "Prime (3 ถึง 6 ปี)"
+        elif age < 10:
+            return "Mature (7 ถึง 10 ปี)"
+        elif age < 15:
+            return "Senior (11 ถึง 14 ปี)"
+        else:
+            return "Geriatric (15 ปีขึ้นไป)"
+
+    def exit_application(self):
+        QtWidgets.QApplication.quit()
+
+import resources_rc
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
