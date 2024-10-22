@@ -33,124 +33,6 @@
     <property name="horizontalSpacing">
      <number>0</number>
     </property>
-    <item row="0" column="0">
-     <widget class="QWidget" name="icon_only_widget" native="true">
-      <property name="styleSheet">
-       <string notr="true">QWidget{
-	background-color: rgb(204, 142, 55);
-}
-
-QPushButton {
-	color:white;
-	height:30px;
-	border:none;
-	border-radius:10px;
-}
-
-QPushButton:checked{
-	background-color: rgb(250, 255, 235);
-	color: rgb(204, 142, 55);
-	font-weight:bold;
-}</string>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>GitHub/PSCP-Project/gui/logo.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <property name="spacing">
-          <number>15</number>
-         </property>
-         <item>
-          <widget class="QPushButton" name="pushButton">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>GitHub/PSCP-Project/gui/dog.png</normaloff>GitHub/PSCP-Project/gui/dog.png</iconset>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>gui/cat.png</normaloff>gui/cat.png</iconset>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>516</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>gui/exit.png</normaloff>gui/exit.png</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="0" column="1">
      <widget class="QWidget" name="icon_namewidget" native="true">
       <property name="styleSheet">
@@ -201,7 +83,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>gui/bar.png</pixmap>
+            <pixmap resource="resources.qrc">:/gui/logo.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -218,7 +100,7 @@ QPushButton:checked{
             </font>
            </property>
            <property name="text">
-            <string>sidebar</string>
+            <string>PAC</string>
            </property>
           </widget>
          </item>
@@ -235,8 +117,8 @@ QPushButton:checked{
             <string>DOG</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>GitHub/PSCP-Project/gui/dog.png</normaloff>GitHub/PSCP-Project/gui/dog.png</iconset>
+            <iconset resource="resources.qrc">
+             <normaloff>:/gui/dog.png</normaloff>:/gui/dog.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -252,8 +134,8 @@ QPushButton:checked{
             <string>CAT</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>GitHub/PSCP-Project/gui/cat.png</normaloff>GitHub/PSCP-Project/gui/cat.png</iconset>
+            <iconset resource="resources.qrc">
+             <normaloff>:/gui/cat.png</normaloff>:/gui/cat.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -284,8 +166,8 @@ QPushButton:checked{
           <string>Exit</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>GitHub/PSCP-Project/gui/exit.png</normaloff>GitHub/PSCP-Project/gui/exit.png</iconset>
+          <iconset resource="resources.qrc">
+           <normaloff>:/gui/exit.png</normaloff>:/gui/exit.png</iconset>
          </property>
         </widget>
        </item>
@@ -327,7 +209,7 @@ QPushButton:checked{
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>GitHub/PSCP-Project/gui/cat.png</pixmap>
+               <pixmap resource="resources.qrc">:/gui/cat.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -468,8 +350,8 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>GitHub/PSCP-Project/gui/bar.png</normaloff>GitHub/PSCP-Project/gui/bar.png</iconset>
+            <iconset resource="resources.qrc">
+             <normaloff>:/gui/bar.png</normaloff>:/gui/bar.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -525,7 +407,7 @@ QPushButton:checked{
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>GitHub/PSCP-Project/gui/dog.png</pixmap>
+                 <pixmap resource="resources.qrc">:/gui/dog.png</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -664,6 +546,124 @@ QPushButton:checked{
       </layout>
      </widget>
     </item>
+    <item row="0" column="0">
+     <widget class="QWidget" name="icon_only_widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color: rgb(204, 142, 55);
+}
+
+QPushButton {
+	color:white;
+	height:30px;
+	border:none;
+	border-radius:10px;
+}
+
+QPushButton:checked{
+	background-color: rgb(250, 255, 235);
+	color: rgb(204, 142, 55);
+	font-weight:bold;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="resources.qrc">:/gui/logo.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="resources.qrc">
+             <normaloff>:/gui/dog.png</normaloff>:/gui/dog.png</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="resources.qrc">
+             <normaloff>:/gui/cat.png</normaloff>:/gui/cat.png</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>516</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/gui/exit.png</normaloff>:/gui/exit.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -699,82 +699,34 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_9</sender>
+   <sender>pushButton_4</sender>
    <signal>toggled(bool)</signal>
-   <receiver>icon_only_widget</receiver>
-   <slot>setVisible(bool)</slot>
+   <receiver>widget</receiver>
+   <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>282</x>
-     <y>61</y>
+     <x>186</x>
+     <y>165</y>
     </hint>
     <hint type="destinationlabel">
-     <x>69</x>
-     <y>312</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>pushButton_3</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>62</x>
-     <y>132</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>139</x>
-     <y>132</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>pushButton_4</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>47</x>
-     <y>173</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>167</x>
-     <y>173</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_3</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>pushButton</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>152</x>
-     <y>121</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>64</x>
-     <y>121</y>
+     <x>466</x>
+     <y>454</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>pushButton_4</sender>
    <signal>toggled(bool)</signal>
-   <receiver>pushButton_2</receiver>
-   <slot>setChecked(bool)</slot>
+   <receiver>widget_2</receiver>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>218</x>
-     <y>165</y>
+     <x>170</x>
+     <y>159</y>
     </hint>
     <hint type="destinationlabel">
-     <x>43</x>
-     <y>178</y>
+     <x>774</x>
+     <y>559</y>
     </hint>
    </hints>
   </connection>
@@ -811,34 +763,82 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_4</sender>
+   <sender>pushButton_9</sender>
    <signal>toggled(bool)</signal>
-   <receiver>widget</receiver>
-   <slot>setHidden(bool)</slot>
+   <receiver>icon_only_widget</receiver>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>186</x>
-     <y>165</y>
+     <x>282</x>
+     <y>61</y>
     </hint>
     <hint type="destinationlabel">
-     <x>466</x>
-     <y>454</y>
+     <x>69</x>
+     <y>312</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>pushButton_4</sender>
    <signal>toggled(bool)</signal>
-   <receiver>widget_2</receiver>
-   <slot>setVisible(bool)</slot>
+   <receiver>pushButton_2</receiver>
+   <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>170</x>
-     <y>159</y>
+     <x>218</x>
+     <y>165</y>
     </hint>
     <hint type="destinationlabel">
-     <x>774</x>
-     <y>559</y>
+     <x>43</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_3</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>139</x>
+     <y>132</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>64</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_4</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>173</y>
     </hint>
    </hints>
   </connection>
