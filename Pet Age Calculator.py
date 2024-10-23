@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-
 import sys
 import math
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 def dog_to_human_age(dog_age):
     if dog_age <= 2:
@@ -331,8 +329,8 @@ class Ui_MainWindow(object):
         # กำหนด font สำหรับ TextBrowser
         thai_font = QtGui.QFont()
         thai_font.setFamily("TH Sarabun New")
-        thai_font.setPointSize(16)  # เพิ่มขนาด font
-        thai_font.setBold(True)  # ทำให้ตัวหนา
+        thai_font.setPointSize(16)
+        thai_font.setBold(True)
 
         # สไตล์สำหรับ TextBrowser ทั้งหมด
         text_browser_style = """
@@ -396,7 +394,6 @@ class Ui_MainWindow(object):
         self.pushButton_3.toggled['bool'].connect(self.widget_2.setHidden) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        # Set up spinboxes
         self.spinBox_2.setMinimum(0)
         self.spinBox_2.setMaximum(25)
         self.spinBox_2.setSingleStep(1)
@@ -405,11 +402,170 @@ class Ui_MainWindow(object):
         self.spinBox_3.setMaximum(25)
         self.spinBox_3.setSingleStep(1)
 
-        # Connect buttons to functions
         self.pushButton_7.clicked.connect(self.calculate_dog_age)
         self.pushButton_8.clicked.connect(self.calculate_cat_age)
         self.pushButton_5.clicked.connect(self.exit_application)
         self.pushButton_6.clicked.connect(self.exit_application)
+
+        main_color = "#B87333"
+        secondary_color = "#FFF8DC"
+        accent_color = "#8B4513"
+        
+        self.centralwidget.setStyleSheet(f"background-color: {secondary_color};")
+        
+        # สไตล์สำหรับปุ่ม
+        button_style = """
+            QPushButton {
+                background-color: #B87333;
+                color: white;
+                border: 2px solid #8B4513;
+                border-radius: 15px;
+                padding: 8px 15px;
+                font-weight: bold;
+                min-width: 100px;
+            }
+            QPushButton:hover {
+                background-color: #8B4513;
+                border: 2px solid #B87333;
+                transition: background-color 0.3s;
+            }
+            QPushButton:pressed {
+                background-color: #6B4423;
+                border: 3px solid #B87333;
+                padding: 10px 15px;
+            }
+        """
+        
+        # สไตล์สำหรับ SpinBox
+        spinbox_style = """
+            QSpinBox {
+                background-color: white;
+                border: 2px solid #B87333;
+                border-radius: 10px;
+                padding: 5px;
+                min-height: 30px;
+                font-size: 14px;
+            }
+            QSpinBox::up-button {
+                width: 20px;
+                border: 1px solid #B87333;
+                border-top-right-radius: 8px;
+                background-color: #FFF8DC;
+                margin-top: 1px;
+                margin-right: 1px;
+                subcontrol-position: top right;
+            }
+            QSpinBox::down-button {
+                width: 20px;
+                border: 1px solid #B87333;
+                border-bottom-right-radius: 8px;
+                background-color: #FFF8DC;
+                margin-bottom: 1px;
+                margin-right: 1px;
+                subcontrol-position: bottom right;
+            }
+            QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+                background-color: #FFE4B5;
+            }
+            QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {
+                background-color: #DEB887;
+            }
+            QSpinBox::up-arrow {
+                image: url(:/gui/up_arrow.png);
+                width: 10px;
+                height: 10px;
+            }
+            QSpinBox::down-arrow {
+                image: url(:/gui/down_arrow.png);
+                width: 10px;
+                height: 10px;
+            }
+        """
+
+        # สไตล์สำหรับ widget หลัก
+        widget_style = f"""
+            QWidget#widget, QWidget#widget_2 {{
+                background-color: {main_color};
+                border-radius: 20px;
+                margin: 10px;
+            }}
+        """
+
+        # สไตล์สำหรับ label
+        label_style = """
+            QLabel {
+                color: white;
+                font-size: 14px;
+                font-weight: bold;
+                padding: 5px;
+            }
+        """
+
+        # สไตล์สำหรับ TextBrowser
+        text_browser_style = f"""
+            QTextBrowser {{
+                background-color: white;
+                border: 2px solid {main_color};
+                border-radius: 15px;
+                padding: 15px;
+                color: #333333;
+                font-size: 14px;
+            }}
+            QTextBrowser:hover {{
+                border: 2px solid {accent_color};
+            }}
+            QScrollBar:vertical {{
+                border: none;
+                background: #F0F0F0;
+                width: 10px;
+                margin: 0px;
+                border-radius: 5px;
+            }}
+            QScrollBar::handle:vertical {{
+                background: {main_color};
+                min-height: 20px;
+                border-radius: 5px;
+            }}
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{
+                height: 0px;
+            }}
+        """
+
+        # กำหนดสไตล์ให้กับ widgets
+        self.pushButton_7.setStyleSheet(button_style)
+        self.pushButton_8.setStyleSheet(button_style)
+        self.spinBox_2.setStyleSheet(spinbox_style)
+        self.spinBox_3.setStyleSheet(spinbox_style)
+        self.widget.setStyleSheet(widget_style)
+        self.widget_2.setStyleSheet(widget_style)
+        
+        # กำหนด font สำหรับ TextBrowser
+        thai_font = QtGui.QFont()
+        thai_font.setFamily("TH Sarabun New")
+        thai_font.setPointSize(16)
+        thai_font.setBold(True)
+
+        # กำหนดสไตล์และ font ให้กับ TextBrowser
+        for browser in [self.textBrowser_2, self.textBrowser_4, 
+                       self.textBrowser_5, self.textBrowser_6]:
+            browser.setFont(thai_font)
+            browser.setStyleSheet(text_browser_style)
+            browser.document().setDocumentMargin(15)
+
+        # เพิ่ม Effect เงา
+        shadow = QtWidgets.QGraphicsDropShadowEffect()
+        shadow.setBlurRadius(20)
+        shadow.setXOffset(5)
+        shadow.setYOffset(5)
+        shadow.setColor(QtGui.QColor(0, 0, 0, 50))
+        self.widget.setGraphicsEffect(shadow)
+
+        shadow2 = QtWidgets.QGraphicsDropShadowEffect()
+        shadow2.setBlurRadius(20)
+        shadow2.setXOffset(5)
+        shadow2.setYOffset(5)
+        shadow2.setColor(QtGui.QColor(0, 0, 0, 50))
+        self.widget_2.setGraphicsEffect(shadow2)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -429,25 +585,27 @@ class Ui_MainWindow(object):
     
         # จัดรูปแบบข้อความให้สวยงาม
         result = f"""
-        🐕 ผลการคำนวณอายุสุนัข 
-        
-        อายุสุนัข: {dog_age} ปี
-        เทียบเท่าอายุคน: {human_age:.1f} ปี
+        <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
+            <h2 style='color: #B87333;'>🐕 ผลการคำนวณ</h2>
+            <p style='font-size: 16px; margin: 10px 0;'>
+                <b>อายุสุนัข:</b> {dog_age} ปี<br>
+                <b>เทียบเท่าอายุคน:</b> {human_age:.1f} ปี
+            </p>
+        </div>
         """
-        
         calculation = f"""
-        📝 วิธีการคำนวณ
-        
-        สูตรที่ใช้:
-        • 1-2 ปีแรก: อายุคน = อายุสุนัข × 10.5
-        • หลังจากนั้น: อายุคน = 21 + (อายุสุนัข - 2) × 4
-        
-        ผลลัพธ์:
-        {result}
+        <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
+            <h2 style='color: #B87333;'>📝 วิธีการคำนวณ</h2>
+            <p style='font-size: 16px; margin: 10px 0;'>
+                <b>สูตรที่ใช้:</b><br>
+                • 1-2 ปีแรก: อายุคน = อายุสุนัข × 10.5<br>
+                • หลังจากนั้น: อายุคน = 21 + (อายุสุนัข - 2) × 4
+            </p>
+        </div>
         """
         
         self.textBrowser_2.setHtml(result)
-        self.textBrowser_5.setHtml(calculation)    
+        self.textBrowser_5.setHtml(calculation)
 
     def calculate_cat_age(self):
         cat_age = self.spinBox_2.value()
@@ -456,18 +614,23 @@ class Ui_MainWindow(object):
         
         # จัดรูปแบบข้อความให้สวยงาม
         result = f"""
-        🐱 ผลการคำนวณอายุแมว
-        
-        อายุแมว: {cat_age} ปี
-        เทียบเท่าอายุคน: {human_age:.1f} ปี
+        <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
+            <h2 style='color: #B87333;'>🐱 ผลการคำนวณ</h2>
+            <p style='font-size: 16px; margin: 10px 0;'>
+                <b>อายุแมว:</b> {cat_age} ปี<br>
+                <b>เทียบเท่าอายุคน:</b> {human_age:.1f} ปี
+            </p>
+        </div>
         """
-        
+
         info = f"""
-        📊 ข้อมูลเพิ่มเติม
-        
-        ช่วงชีวิต: {life_stage}
-        
-        {result}
+        <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
+            <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
+            <p style='font-size: 16px; margin: 10px 0;'>
+                <b>ช่วงชีวิต:</b><br>
+                {life_stage}
+            </p>
+        </div>
         """
         
         self.textBrowser_4.setHtml(result)
