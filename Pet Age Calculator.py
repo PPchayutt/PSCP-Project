@@ -328,6 +328,61 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
+        # กำหนด font สำหรับ TextBrowser
+        thai_font = QtGui.QFont()
+        thai_font.setFamily("TH Sarabun New")
+        thai_font.setPointSize(16)  # เพิ่มขนาด font
+        thai_font.setBold(True)  # ทำให้ตัวหนา
+
+        # สไตล์สำหรับ TextBrowser ทั้งหมด
+        text_browser_style = """
+            QTextBrowser {
+                background-color: rgb(250, 255, 235);
+                border: 2px solid rgb(204, 142, 55);
+                border-radius: 10px;
+                padding: 15px;
+                color: rgb(70, 70, 70);
+            }
+            QTextBrowser:hover {
+                border: 2px solid rgb(180, 120, 40);
+            }
+            QScrollBar:vertical {
+                border: none;
+                background: rgb(240, 240, 240);
+                width: 10px;
+                margin: 0px;
+                border-radius: 5px;
+            }
+            QScrollBar::handle:vertical {
+                background: rgb(204, 142, 55);
+                min-height: 20px;
+                border-radius: 5px;
+            }
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
+        """
+        # กำหนดสไตล์และ font ให้กับแต่ละ TextBrowser แยกทีละตัว
+        self.textBrowser_2.setFont(thai_font)
+        self.textBrowser_2.setStyleSheet(text_browser_style)
+        self.textBrowser_2.document().setDocumentMargin(10)
+
+        self.textBrowser_4.setFont(thai_font)
+        self.textBrowser_4.setStyleSheet(text_browser_style)
+        self.textBrowser_4.document().setDocumentMargin(10)
+
+        self.textBrowser_5.setFont(thai_font)
+        self.textBrowser_5.setStyleSheet(text_browser_style)
+        self.textBrowser_5.document().setDocumentMargin(10)
+
+        self.textBrowser_6.setFont(thai_font)
+        self.textBrowser_6.setStyleSheet(text_browser_style)
+        self.textBrowser_6.document().setDocumentMargin(10)
+        self.textBrowser_2.setStyleSheet(text_browser_style)
+        self.textBrowser_4.setStyleSheet(text_browser_style)
+        self.textBrowser_5.setStyleSheet(text_browser_style)
+        self.textBrowser_6.setStyleSheet(text_browser_style)
+
         self.retranslateUi(MainWindow)
         self.pushButton_9.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.pushButton_9.toggled['bool'].connect(self.icon_namewidget.setHidden) # type: ignore
@@ -371,32 +426,68 @@ class Ui_MainWindow(object):
     def calculate_dog_age(self):
         dog_age = self.spinBox_3.value()
         human_age = dog_to_human_age(dog_age)
-        result = f"อายุสุนัข {dog_age} ปี เทียบเท่ากับอายุคน {human_age:.1f} ปี"
-        self.textBrowser_2.setText(result)
-        self.textBrowser_5.setText(f"คำนวณโดยใช้สูตร:\n1-2 ปีแรก: อายุคน = อายุสุนัข * 10.5\nหลังจากนั้น: อายุคน = 21 + (อายุสุนัข - 2) * 4\n\nผลลัพธ์: {result}")
+    
+        # จัดรูปแบบข้อความให้สวยงาม
+        result = f"""
+        🐕 ผลการคำนวณอายุสุนัข 
+        
+        อายุสุนัข: {dog_age} ปี
+        เทียบเท่าอายุคน: {human_age:.1f} ปี
+        """
+        
+        calculation = f"""
+        📝 วิธีการคำนวณ
+        
+        สูตรที่ใช้:
+        • 1-2 ปีแรก: อายุคน = อายุสุนัข × 10.5
+        • หลังจากนั้น: อายุคน = 21 + (อายุสุนัข - 2) × 4
+        
+        ผลลัพธ์:
+        {result}
+        """
+        
+        self.textBrowser_2.setHtml(result)
+        self.textBrowser_5.setHtml(calculation)    
 
     def calculate_cat_age(self):
         cat_age = self.spinBox_2.value()
         human_age = cat_to_human_age(cat_age)
-        result = f"อายุแมว {cat_age} ปี เทียบเท่ากับอายุคน {human_age:.1f} ปี"
-        self.textBrowser_4.setText(result)
         life_stage = self.get_cat_life_stage(cat_age)
-        self.textBrowser_6.setText(f"ช่วงชีวิต: {life_stage}\n\n{result}")
+        
+        # จัดรูปแบบข้อความให้สวยงาม
+        result = f"""
+        🐱 ผลการคำนวณอายุแมว
+        
+        อายุแมว: {cat_age} ปี
+        เทียบเท่าอายุคน: {human_age:.1f} ปี
+        """
+        
+        info = f"""
+        📊 ข้อมูลเพิ่มเติม
+        
+        ช่วงชีวิต: {life_stage}
+        
+        {result}
+        """
+        
+        self.textBrowser_4.setHtml(result)
+        self.textBrowser_6.setHtml(info)
 
     def get_cat_life_stage(self, age):
-        if age < 1:
-            return "Kitten (แรกเกิดถึง 1 ปี)"
-        elif age < 2:
-            return "Junior (1 ถึง 2 ปี)"
-        elif age < 6:
-            return "Prime (3 ถึง 6 ปี)"
-        elif age < 10:
-            return "Mature (7 ถึง 10 ปี)"
-        elif age < 15:
-            return "Senior (11 ถึง 14 ปี)"
-        else:
-            return "Geriatric (15 ปีขึ้นไป)"
-
+        stages = {
+            (0, 1): "🐱 Kitten (แรกเกิดถึง 1 ปี)\nช่วงวัยเด็ก การเจริญเติบโตและพัฒนาการสูง",
+            (1, 2): "🐱 Junior (1-2 ปี)\nช่วงวัยรุ่น เต็มไปด้วยพลังและความกระตือรือร้น",
+            (2, 6): "🐱 Prime (3-6 ปี)\nช่วงวัยผู้ใหญ่ สมบูรณ์แข็งแรงที่สุด",
+            (6, 10): "🐱 Mature (7-10 ปี)\nช่วงวัยกลางคน เริ่มมีการเปลี่ยนแปลงทางร่างกาย",
+            (10, 15): "🐱 Senior (11-14 ปี)\nช่วงวัยสูงอายุ ต้องการการดูแลเป็นพิเศษ",
+            (15, 100): "🐱 Geriatric (15 ปีขึ้นไป)\nช่วงวัยชรา ต้องการการดูแลอย่างใกล้ชิด"
+        }
+        
+        for (min_age, max_age), description in stages.items():
+            if min_age <= age < max_age:
+                return description
+        
+        return stages[(15, 100)]  # Default to geriatric
     def exit_application(self):
         QtWidgets.QApplication.quit()
 
