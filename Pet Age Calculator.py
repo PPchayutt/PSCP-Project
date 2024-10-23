@@ -360,19 +360,17 @@ class Ui_MainWindow(object):
                 height: 0px;
             }
         """
+
         # กำหนดสไตล์และ font ให้กับแต่ละ TextBrowser แยกทีละตัว
         self.textBrowser_2.setFont(thai_font)
         self.textBrowser_2.setStyleSheet(text_browser_style)
         self.textBrowser_2.document().setDocumentMargin(10)
-
         self.textBrowser_4.setFont(thai_font)
         self.textBrowser_4.setStyleSheet(text_browser_style)
         self.textBrowser_4.document().setDocumentMargin(10)
-
         self.textBrowser_5.setFont(thai_font)
         self.textBrowser_5.setStyleSheet(text_browser_style)
         self.textBrowser_5.document().setDocumentMargin(10)
-
         self.textBrowser_6.setFont(thai_font)
         self.textBrowser_6.setStyleSheet(text_browser_style)
         self.textBrowser_6.document().setDocumentMargin(10)
@@ -380,7 +378,6 @@ class Ui_MainWindow(object):
         self.textBrowser_4.setStyleSheet(text_browser_style)
         self.textBrowser_5.setStyleSheet(text_browser_style)
         self.textBrowser_6.setStyleSheet(text_browser_style)
-
         self.retranslateUi(MainWindow)
         self.pushButton_9.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.pushButton_9.toggled['bool'].connect(self.icon_namewidget.setHidden) # type: ignore
@@ -393,24 +390,19 @@ class Ui_MainWindow(object):
         self.pushButton_3.toggled['bool'].connect(self.widget.setVisible) # type: ignore
         self.pushButton_3.toggled['bool'].connect(self.widget_2.setHidden) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
         self.spinBox_2.setMinimum(0)
         self.spinBox_2.setMaximum(25)
         self.spinBox_2.setSingleStep(1)
-        
         self.spinBox_3.setMinimum(0)
         self.spinBox_3.setMaximum(25)
         self.spinBox_3.setSingleStep(1)
-
         self.pushButton_7.clicked.connect(self.calculate_dog_age)
         self.pushButton_8.clicked.connect(self.calculate_cat_age)
         self.pushButton_5.clicked.connect(self.exit_application)
         self.pushButton_6.clicked.connect(self.exit_application)
-
         main_color = "#B87333"
         secondary_color = "#FFF8DC"
         accent_color = "#8B4513"
-        
         self.centralwidget.setStyleSheet(f"background-color: {secondary_color};")
         
         # สไตล์สำหรับปุ่ม
@@ -559,7 +551,6 @@ class Ui_MainWindow(object):
         shadow.setYOffset(5)
         shadow.setColor(QtGui.QColor(0, 0, 0, 50))
         self.widget.setGraphicsEffect(shadow)
-
         shadow2 = QtWidgets.QGraphicsDropShadowEffect()
         shadow2.setBlurRadius(20)
         shadow2.setXOffset(5)
@@ -603,7 +594,6 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-        
         self.textBrowser_2.setHtml(result)
         self.textBrowser_5.setHtml(calculation)
 
@@ -611,7 +601,7 @@ class Ui_MainWindow(object):
         cat_age = self.spinBox_2.value()
         human_age = cat_to_human_age(cat_age)
         life_stage = self.get_cat_life_stage(cat_age)
-        
+
         # จัดรูปแบบข้อความให้สวยงาม
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
@@ -632,7 +622,6 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-        
         self.textBrowser_4.setHtml(result)
         self.textBrowser_6.setHtml(info)
 
@@ -645,12 +634,10 @@ class Ui_MainWindow(object):
             (10, 15): "🐱 Senior (11-14 ปี)\nช่วงวัยสูงอายุ ต้องการการดูแลเป็นพิเศษ",
             (15, 100): "🐱 Geriatric (15 ปีขึ้นไป)\nช่วงวัยชรา ต้องการการดูแลอย่างใกล้ชิด"
         }
-        
         for (min_age, max_age), description in stages.items():
             if min_age <= age < max_age:
                 return description
-        
-        return stages[(15, 100)]  # Default to geriatric
+        return stages[(15, 100)]
     def exit_application(self):
         QtWidgets.QApplication.quit()
 
