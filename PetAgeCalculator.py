@@ -577,7 +577,7 @@ class Ui_MainWindow(object):
         # จัดรูปแบบข้อความให้สวยงาม
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
-            <h2 style='color: #B87333;'>🐕 ผลการคำนวณ</h2>
+            <h2 style='color: #B87333;'>🐶 ผลการคำนวณ</h2>
             <p style='font-size: 16px; margin: 10px 0;'>
                 <b>อายุสุนัข:</b> {dog_age} ปี<br>
                 <b>เทียบเท่าอายุคน:</b> {human_age:.1f} ปี
