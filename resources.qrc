@@ -1,9 +1,9 @@
 <RCC>
   <qresource>
-    <file>gui/hamster.png</file>
-    <file>gui/porcupine.png</file>
-    <file>gui/rabbit.png</file>
-    <file>gui/squirrel.png</file>
+    <file>gui/ไม่มีชื่อ 44_20241025175809.png</file>
+    <file>gui/ไม่มีชื่อ 44_20241025175815.png</file>
+    <file>gui/ไม่มีชื่อ 44_20241025175819.png</file>
+    <file>gui/ไม่มีชื่อ 44_20241025175823.png</file>
     <file>gui/bar.png</file>
     <file>gui/cat.png</file>
     <file>gui/dog.png</file>
