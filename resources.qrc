@@ -13,6 +13,9 @@
     <file>gui/rabbit.png</file>
     <file>gui/squirrel.png</file>
     <file>gui/porcupine.png</file>
+<<<<<<< HEAD
+>>>>>>> parent of 6c4c515 (change files name and data)
+=======
 >>>>>>> parent of 6c4c515 (change files name and data)
     <file>gui/exit.png</file>
     <file>gui/logo.png</file>
