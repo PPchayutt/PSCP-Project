@@ -11,7 +11,7 @@ def dog_to_human_age(dog_age):
 
 def cat_to_human_age(cat_age):
     age_table = {
-        1: 15, 2: 24, 3: 28, 4: 32, 5: 36, 6: 40, 7: 44, 8: 48, 9: 52, 10: 56,
+        0: 0, 1: 15, 2: 24, 3: 28, 4: 32, 5: 36, 6: 40, 7: 44, 8: 48, 9: 52, 10: 56,
         11: 60, 12: 64, 13: 68, 14: 72, 15: 76, 16: 80, 17: 84, 18: 88,
         19: 92, 20: 96, 21: 100, 22: 104, 23: 108, 24: 112, 25: 116
     }
@@ -26,9 +26,6 @@ def bunny_to_human_age(bunny_age):
 
 def hamster_to_human_age(hamster_age):
     age_table = {
-        0.25: 6,      # 3 months
-        0.5: 15,      # 6 months
-        0.75: 23.5,   # 9 months
         1: 41,        # 1 year
         1.5: 52.5,    # 1.5 years
         2: 63.5,      # 2 years
@@ -42,9 +39,6 @@ def hamster_to_human_age(hamster_age):
 
 def hedgehog_to_human_age(hedgehog_age):
     age_table = {
-        1/12: 5,     # 1 month
-        2/12: 10,    # 2 months
-        6/12: 20,    # 6 months
         1.17: 30,    # 1 year 2 months
         3: 40,       # 3 years
         3.5: 50,     # 3 years 6 months
@@ -71,6 +65,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(2483, 938)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/gui/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgb(250, 255, 235);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(255, 226, 156);")
@@ -1152,10 +1149,10 @@ class Ui_MainWindow(object):
             <p style='font-size: 16px; margin: 10px 0;'>
                 แฮมสเตอร์มีช่วงอายุเฉลี่ย 2-3 ปี<br>
                 โดยแบ่งเป็น 4 ช่วงวัย:<br>
-                🐹 Weaning period (0-3 เดือน)<br>
-                🐹 Puberty (3-6 เดือน)<br>
-                🐹 Adulthood (6 เดือน - 1 ปี)<br>
-                🐹 Old age (1 ปีขึ้นไป)
+                🐹 ช่วงวัยเด็ก (0-3 เดือน)<br>
+                🐹 ช่วงวัยรุ่น (3-6 เดือน)<br>
+                🐹 ช่วงโตเต็มวัย (6 เดือน - 1 ปี)<br>
+                🐹 ช่วงวัยชรา (1 ปีขึ้นไป)
             </p>
         </div>
         """
@@ -1182,10 +1179,10 @@ class Ui_MainWindow(object):
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
             <p style='font-size: 16px; margin: 10px 0;'>
                 เม่นมีช่วงชีวิต 4 ระยะ:<br>
-                🦔 Hoglet (0-6 เดือน)<br>
-                🦔 Teenage hedgehog (6 เดือน - 1 ปี)<br>
-                🦔 Adult hedgehog (1-4 ปี)<br>
-                🦔 Senior hedgehog (4 ปีขึ้นไป)
+                🦔 ช่วงวัยเด็ก (0-6 เดือน)<br>
+                🦔 ช่วงวัยรุ่น (6 เดือน - 1 ปี)<br>
+                🦔 ช่วงโตเต็มวัย (1-4 ปี)<br>
+                🦔 ช่วงวัยชรา (4 ปีขึ้นไป)
             </p>
         </div>
         """
