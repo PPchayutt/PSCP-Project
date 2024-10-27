@@ -757,11 +757,39 @@ class Ui_MainWindow(object):
 
         # สไตล์สำหรับทุก TextBrowser
         all_browsers = [
-            self.textBrowser_2, self.textBrowser_4, self.textBrowser_5, 
-            self.textBrowser_6, self.textBrowser_8, self.textBrowser_9,
-            self.textBrowser_11, self.textBrowser_12, self.textBrowser_14, 
-            self.textBrowser_15, self.textBrowser_17, self.textBrowser_18
+            self.textBrowser_2, self.textBrowser_3, self.textBrowser_4, 
+            self.textBrowser_5, self.textBrowser_6, self.textBrowser_8, 
+            self.textBrowser_9, self.textBrowser_11, self.textBrowser_12, 
+            self.textBrowser_14, self.textBrowser_15, self.textBrowser_17, 
+            self.textBrowser_18, self.textBrowser_7, self.textBrowser_10, 
+            self.textBrowser_13, self.textBrowser_16, self.textBrowser_19
         ]
+
+        text_style = """
+            QTextBrowser {
+                background-color: rgb(250, 255, 235);
+                border: 2px solid rgb(204, 142, 55);
+                border-radius: 15px;
+                padding: 15px;
+                color: rgb(70, 70, 70);
+            }
+            QScrollBar:vertical {
+                border: none;
+                background: rgb(240, 240, 240);
+                width: 10px;
+                margin: 0px;
+            }
+            QScrollBar::handle:vertical {
+                background: rgb(204, 142, 55);
+                min-height: 20px;
+            }
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
+        """
+
+        for browser in all_browsers:
+            browser.setStyleSheet(text_style)
 
         text_browser_style = f"""
             QTextBrowser {{
@@ -822,7 +850,6 @@ class Ui_MainWindow(object):
             QPushButton:hover {{
                 background-color: {accent_color};
                 border: 2px solid {main_color};
-                transition: background-color 0.3s;
             }}
             QPushButton:pressed {{
                 background-color: #6B4423;
