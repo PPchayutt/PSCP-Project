@@ -846,6 +846,7 @@ class Ui_MainWindow(object):
                 border: 2px solid {main_color};
                 border-radius: 10px;
                 padding: 5px;
+                min-width: 200px;  /* เพิ่มความกว้างขั้นต่ำ */
                 min-height: 30px;
                 font-size: 14px;
             }}
@@ -874,17 +875,22 @@ class Ui_MainWindow(object):
                 background-color: #DEB887;
             }}
             QSpinBox::up-arrow {{
-                image: url(:/gui/up_arrow.png);
-                width: 10px;
-                height: 10px;
+                image: none;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 7px solid {main_color};
             }}
             QSpinBox::down-arrow {{
-                image: url(:/gui/down_arrow.png);
-                width: 10px;
-                height: 10px;
+                image: none;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 7px solid {main_color};
             }}
         """
-
         for spinbox in all_spinboxes:
             spinbox.setStyleSheet(spinbox_style)
 
@@ -1039,8 +1045,7 @@ class Ui_MainWindow(object):
     def calculate_dog_age(self):
         dog_age = self.spinBox_3.value()
         human_age = dog_to_human_age(dog_age)
-    
-        # จัดรูปแบบข้อความให้สวยงาม
+        
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>🐶 ผลการคำนวณ</h2>
@@ -1050,6 +1055,7 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
+
         calculation = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1058,10 +1064,70 @@ class Ui_MainWindow(object):
                 🐶 1-2 ปีแรก: อายุคน = อายุสุนัข × 10.5<br>
                 🐶 หลังจากนั้น: อายุคน = 21 + (อายุสุนัข - 2) × 4
             </p>
+            <hr style='border: 1px solid #B87333; margin: 15px 0;'>
+            <h3 style='color: #B87333;'>⚠️ หมายเหตุ:</h3>
+            <p style='font-size: 16px; margin: 10px 0;'>
+                การคำนวณนี้เป็นเพียงการประเมินคร่าวๆ<br>
+                อายุที่แท้จริงอาจแตกต่างกันตามขนาดและน้ำหนักของสุนัข<br><br>
+                <b>โดยทั่วไป:</b><br>
+                • สุนัขพันธุ์เล็ก อายุยืนกว่าพันธุ์ใหญ่<br>
+                • สุนัขพันธุ์ใหญ่ เข้าสู่วัยชราเร็วกว่าพันธุ์เล็ก
+            </p>
         </div>
         """
+
+        # กำหนดข้อมูลตามช่วงอายุ
+        if dog_age < 1:
+            stage_title = "🐕 Puppy"
+            stage_age = "แรกเกิดถึง 1 ปี"
+            stage_desc = "ช่วงวัยเด็ก การเจริญเติบโตและพัฒนาการสูง"
+            stage_detail = """
+            • ต้องการวัคซีนและการถ่ายพยาธิ
+            • การฝึกพื้นฐานและการเข้าสังคม
+            • อาหารสำหรับลูกสุนัขโดยเฉพาะ
+            """
+        elif 1 <= dog_age <= 8:
+            stage_title = "🐕 Adult"
+            stage_age = "1-8 ปี"
+            stage_desc = "ช่วงวัยผู้ใหญ่ แข็งแรงสมบูรณ์"
+            stage_detail = """
+            • ควรได้รับการออกกำลังกายสม่ำเสมอ
+            • ตรวจสุขภาพประจำปี
+            • ดูแลสุขภาพฟันและเหงือก
+            """
+        else:
+            stage_title = "🐕 Senior"
+            stage_age = "มากกว่า 8 ปี"
+            stage_desc = "ช่วงวัยชรา ต้องการการดูแลเป็นพิเศษ"
+            stage_detail = """
+            • ตรวจสุขภาพทุก 6 เดือน
+            • อาหารสำหรับสุนัขสูงอายุ
+            • ระวังโรคข้อและกระดูก
+            """
+
+        stage_info = f"""
+        <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
+            <div style='border-left: 4px solid #B87333; padding-left: 15px;'>
+                <h2 style='color: #B87333; margin-bottom: 5px;'>{stage_title}</h2>
+                <h3 style='color: #8B4513; margin-top: 5px;'>อายุ: {stage_age}</h3>
+            </div>
+            
+            <div style='margin: 15px 0; padding: 10px; background-color: rgba(184, 115, 51, 0.1); border-radius: 5px;'>
+                <p style='color: #666; margin: 0;'>{stage_desc}</p>
+            </div>
+            
+            <div style='margin-top: 15px;'>
+                <p style='color: #B87333; font-weight: bold; margin-bottom: 10px;'>การดูแลที่เหมาะสม:</p>
+                <div style='color: #666; padding-left: 10px;'>
+                    {stage_detail.strip().replace('•', '&#8226;')}
+                </div>
+            </div>
+        </div>
+        """
+        
         self.textBrowser_2.setHtml(result)
         self.textBrowser_5.setHtml(calculation)
+        self.textBrowser_7.setHtml(stage_info)
 
     def calculate_cat_age(self):
         cat_age = self.spinBox_2.value()
@@ -1219,6 +1285,24 @@ class Ui_MainWindow(object):
         self.textBrowser_17.setHtml(result)
         self.textBrowser_18.setHtml(info)
 
+    def get_dog_life_stage(self, age):
+        if age < 1:
+            stage = "🐕 Puppy (แรกเกิดถึง 1 ปี)\nช่วงวัยเด็ก การเจริญเติบโตและพัฒนาการสูง"
+        elif 1 <= age <= 8:
+            stage = "🐕 Adult (1-8 ปี)\nช่วงวัยผู้ใหญ่ แข็งแรงสมบูรณ์"
+        else:
+            stage = "🐕 Senior (มากกว่า 8 ปี)\nช่วงวัยชรา ต้องการการดูแลเป็นพิเศษ"
+
+        warning = """
+        ⚠️ หมายเหตุ: 
+        การคำนวณนี้เป็นเพียงการประเมินคร่าวๆ 
+        อายุที่แท้จริงอาจแตกต่างกันตามขนาดและน้ำหนักของสุนัข
+        โดยทั่วไป:
+        • สุนัขพันธุ์เล็ก อายุยืนกว่าพันธุ์ใหญ่
+        • สุนัขพันธุ์ใหญ่ เข้าสู่วัยชราเร็วกว่าพันธุ์เล็ก
+        """
+        return stage + warning
+        
     def exit_application(self):
         QtWidgets.QApplication.quit()
 
