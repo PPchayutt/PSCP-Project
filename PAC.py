@@ -840,57 +840,51 @@ class Ui_MainWindow(object):
             self.spinBox_5, self.spinBox_6, self.spinBox_7
         ]
 
-        spinbox_style = f"""
-            QSpinBox {{
+        spinbox_style = """
+            QSpinBox {
                 background-color: white;
-                border: 2px solid {main_color};
+                border: 2px solid #B87333;
                 border-radius: 10px;
                 padding: 5px;
-                min-width: 200px;  /* เพิ่มความกว้างขั้นต่ำ */
                 min-height: 30px;
                 font-size: 14px;
-            }}
-            QSpinBox::up-button {{
+            }
+            QSpinBox::up-button {
                 width: 20px;
-                border: 1px solid {main_color};
+                border: 1px solid #B87333;
                 border-top-right-radius: 8px;
                 background-color: #FFF8DC;
                 margin-top: 1px;
                 margin-right: 1px;
                 subcontrol-position: top right;
-            }}
-            QSpinBox::down-button {{
+            }
+            QSpinBox::down-button {
                 width: 20px;
-                border: 1px solid {main_color};
+                border: 1px solid #B87333;
                 border-bottom-right-radius: 8px;
                 background-color: #FFF8DC;
                 margin-bottom: 1px;
                 margin-right: 1px;
                 subcontrol-position: bottom right;
-            }}
-            QSpinBox::up-button:hover, QSpinBox::down-button:hover {{
+            }
+            QSpinBox::up-button:hover, QSpinBox::down-button:hover {
                 background-color: #FFE4B5;
-            }}
-            QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {{
+            }
+            QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {
                 background-color: #DEB887;
-            }}
-            QSpinBox::up-arrow {{
-                image: none;
-                width: 0;
-                height: 0;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
-                border-bottom: 7px solid {main_color};
-            }}
-            QSpinBox::down-arrow {{
-                image: none;
-                width: 0;
-                height: 0;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
-                border-top: 7px solid {main_color};
-            }}
+            }
+            QSpinBox::up-arrow {
+                image: url(:/gui/up_arrow.png);
+                width: 10px;
+                height: 10px;
+            }
+            QSpinBox::down-arrow {
+                image: url(:/gui/down_arrow.png);
+                width: 10px;
+                height: 10px;
+            }
         """
+
         for spinbox in all_spinboxes:
             spinbox.setStyleSheet(spinbox_style)
 
@@ -1241,7 +1235,7 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-    
+
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1254,13 +1248,13 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-    
+
         self.textBrowser_11.setHtml(result)
         self.textBrowser_12.setHtml(info)
+
     def calculate_squirrel_age(self):
         squirrel_age = self.spinBox_7.value()
         human_age = squirrel_to_human_age(squirrel_age)
-    
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>🐿️ ผลการคำนวณ</h2>
@@ -1270,7 +1264,7 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-    
+
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1281,7 +1275,7 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-    
+
         self.textBrowser_17.setHtml(result)
         self.textBrowser_18.setHtml(info)
 
