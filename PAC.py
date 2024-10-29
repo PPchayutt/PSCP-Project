@@ -1335,5 +1335,9 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    ui.widget_2.hide()  # ซ่อนหน้าแมว
+    ui.pushButton_3.setChecked(True)  # เลือกปุ่มหมา
+    ui.widget.show()  # แสดงหน้าหมา
+    ui.pushButton_9.setChecked(True)  # เพิ่มบรรทัดนี้ - เลือกเมนูแบบสั้น
     MainWindow.show()
     sys.exit(app.exec_())
