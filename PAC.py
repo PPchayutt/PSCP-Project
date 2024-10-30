@@ -7,7 +7,8 @@ from calculation import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1920, 1080)
+        MainWindow.setFixedSize(1280, 720)  # ล็อคขนาดหน้าต่างให้คงที่
+        MainWindow.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/gui/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
