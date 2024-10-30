@@ -66,7 +66,7 @@ def squirrel_to_human_age(squirrel_age):
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(2483, 938)
+        MainWindow.resize(1920, 1080)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/gui/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -1316,7 +1316,7 @@ class Ui_MainWindow(object):
 
         warning = """
         ⚠️ หมายเหตุ: 
-        การคำนวณนี้เป็นเพียงการประเมินคร่าวๆ 
+        การคำนวณนี้เป็นเพียงการประเมินคร่าวๆ
         อายุที่แท้จริงอาจแตกต่างกันตามขนาดและน้ำหนักของสุนัข
         โดยทั่วไป:
         • สุนัขพันธุ์เล็ก อายุยืนกว่าพันธุ์ใหญ่
