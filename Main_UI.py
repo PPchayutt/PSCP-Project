@@ -2,7 +2,7 @@
 import sys
 import math
 from PyQt5 import QtCore, QtGui, QtWidgets
-from calculation import *
+from Calculation import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
