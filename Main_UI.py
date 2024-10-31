@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
+"""โค้ดส่วนหน้า UI ของโปรแกรม"""
 import sys
-import math
 from PyQt5 import QtCore, QtGui, QtWidgets
 from calculation import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        """ส่วน Main UI"""
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1920, 1080)
         MainWindow.setMinimumSize(QtCore.QSize(1280, 720))
@@ -983,6 +983,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setStyleSheet(f"background-color: {secondary_color};")
 
     def retranslateUi(self, MainWindow):
+        """ข้อความของ UI"""
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Pet Age Calculator"))
         self.label_3.setText(_translate("MainWindow", "PAC"))
@@ -1007,9 +1008,9 @@ class Ui_MainWindow(object):
         self.pushButton_13.setText(_translate("MainWindow", "คำนวณ"))
 
     def calculate_dog_age(self):
+        """แสดงการคำนวณอายุสุนัข"""
         dog_age = self.spinBox_3.value()
         human_age = dog_to_human_age(dog_age)
-        
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>🐶 ผลการคำนวณ</h2>
@@ -1019,7 +1020,6 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-
         calculation = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1094,11 +1094,10 @@ class Ui_MainWindow(object):
         self.textBrowser_7.setHtml(stage_info)
 
     def calculate_cat_age(self):
+        """แสดงการคำนวณอายุแมว"""
         cat_age = self.spinBox_2.value()
         human_age = cat_to_human_age(cat_age)
         life_stage = self.get_cat_life_stage(cat_age)
-
-        # จัดรูปแบบข้อความให้สวยงาม
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>🐱 ผลการคำนวณ</h2>
@@ -1108,7 +1107,6 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1122,6 +1120,7 @@ class Ui_MainWindow(object):
         self.textBrowser_6.setHtml(info)
 
     def get_cat_life_stage(self, age):
+        """แสดงการคำนวณช่วงอายุแมว"""
         stages = {
             (0, 1): "🐱 Kitten (แรกเกิดถึง 1 ปี)\nช่วงวัยเด็ก การเจริญเติบโตและพัฒนาการสูง",
             (1, 2.5): "🐱 Junior (1-2 ปี)\nช่วงวัยรุ่น เต็มไปด้วยพลังและความกระตือรือร้น",
@@ -1133,11 +1132,11 @@ class Ui_MainWindow(object):
         for (min_age, max_age), description in stages.items():
             if min_age <= age < max_age:
                 return description
-    
+
     def calculate_bunny_age(self):
+        """แสดงการคำนวณอายุกระต่าย"""
         bunny_age = self.spinBox_6.value()
         human_age = bunny_to_human_age(bunny_age)
-    
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>🐰 ผลการคำนวณ</h2>
@@ -1147,7 +1146,6 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-    
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1157,14 +1155,13 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-    
         self.textBrowser_14.setHtml(result)
         self.textBrowser_15.setHtml(info)
 
     def calculate_hamster_age(self):
+        """แสดงการคำนวณอายุแฮมสเตอร์"""
         hamster_age = self.spinBox_4.value()
         human_age = hamster_to_human_age(hamster_age)
-    
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>🐹 ผลการคำนวณ</h2>
@@ -1174,7 +1171,6 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-    
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1188,14 +1184,13 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-    
         self.textBrowser_8.setHtml(result)
         self.textBrowser_9.setHtml(info)
 
     def calculate_hedgehog_age(self):
+        """แสดงการคำนวณอายุเม่น"""
         hedgehog_age = self.spinBox_5.value()
         human_age = hedgehog_to_human_age(hedgehog_age)
-    
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>🦔 ผลการคำนวณ</h2>
@@ -1223,6 +1218,7 @@ class Ui_MainWindow(object):
         self.textBrowser_12.setHtml(info)
 
     def calculate_squirrel_age(self):
+        """แสดงการคำนวณอายุกระรอก"""
         squirrel_age = self.spinBox_7.value()
         human_age = squirrel_to_human_age(squirrel_age)
         result = f"""
@@ -1234,7 +1230,6 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1245,13 +1240,11 @@ class Ui_MainWindow(object):
             </p>
         </div>
         """
-
         self.textBrowser_17.setHtml(result)
         self.textBrowser_18.setHtml(info)
 
-    
-        
     def exit_application(self):
+        """ปุ่มออกโปรแกรม"""
         QtWidgets.QApplication.quit()
 
 import resources_rc
@@ -1262,9 +1255,9 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-    ui.widget_2.hide()  # ซ่อนหน้าแมว
-    ui.pushButton_3.setChecked(True)  # เลือกปุ่มหมา
-    ui.widget.show()  # แสดงหน้าหมา
-    ui.pushButton_9.setChecked(True)  # เพิ่มบรรทัดนี้ - เลือกเมนูแบบสั้น
+    ui.widget_2.hide()
+    ui.pushButton_3.setChecked(True)
+    ui.widget.show()
+    ui.pushButton_9.setChecked(True)
     MainWindow.show()
     sys.exit(app.exec_())
