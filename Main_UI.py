@@ -1042,13 +1042,26 @@ class Ui_MainWindow(object):
         human_age = dog_to_human_age(dog_age)
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
-            <h2 style='color: #B87333;'>🐶 ผลการคำนวณ</h2>
-            <p style='font-size: 16px; margin: 10px 0;'>
-                <b>อายุสุนัข:</b> {dog_age} ปี<br>
-                <b>เทียบเท่าอายุคน:</b> {human_age:.1f} ปี
-            </p>
+            <h2 style='color: #B87333; text-align: center;'>🐶 ผลการคำนวณ</h2>
+            <div style='display: flex; justify-content: space-between; margin-top: 55px;'>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0;'>
+                        <b>อายุสุนัข</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{dog_age}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0; margin-top: 35px;'>
+                        <b>เทียบเท่าอายุคน</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{human_age:.1f}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+            </div>
         </div>
         """
+        
         calculation = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1129,13 +1142,26 @@ class Ui_MainWindow(object):
         life_stage = self.get_cat_life_stage(cat_age)
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
-            <h2 style='color: #B87333;'>🐱 ผลการคำนวณ</h2>
-            <p style='font-size: 16px; margin: 10px 0;'>
-                <b>อายุแมว:</b> {cat_age} ปี<br>
-                <b>เทียบเท่าอายุคน:</b> {human_age:.1f} ปี
-            </p>
+            <h2 style='color: #B87333; text-align: center;'>🐱 ผลการคำนวณ</h2>
+            <div style='display: flex; justify-content: space-between; margin-top: 55px;'>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0;'>
+                        <b>อายุแมว</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{cat_age}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0; margin-top: 35px;'>
+                        <b>เทียบเท่าอายุคน</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{human_age:.1f}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+            </div>
         </div>
         """
+
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1168,13 +1194,26 @@ class Ui_MainWindow(object):
         human_age = bunny_to_human_age(bunny_age)
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
-            <h2 style='color: #B87333;'>🐰 ผลการคำนวณ</h2>
-            <p style='font-size: 16px; margin: 10px 0;'>
-                <b>อายุกระต่าย:</b> {bunny_age} ปี<br>
-                <b>เทียบเท่าอายุคน:</b> {human_age:.1f} ปี
-            </p>
+            <h2 style='color: #B87333; text-align: center;'>🐰 ผลการคำนวณ</h2>
+            <div style='display: flex; justify-content: space-between; margin-top: 55px;'>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0;'>
+                        <b>อายุกระต่าย</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{bunny_age}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0; margin-top: 35px;'>
+                        <b>เทียบเท่าอายุคน</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{human_age:.1f}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+            </div>
         </div>
         """
+        
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1193,13 +1232,26 @@ class Ui_MainWindow(object):
         human_age = hamster_to_human_age(hamster_age)
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
-            <h2 style='color: #B87333;'>🐹 ผลการคำนวณ</h2>
-            <p style='font-size: 16px; margin: 10px 0;'>
-                <b>อายุแฮมสเตอร์:</b> {hamster_age} ปี<br>
-                <b>เทียบเท่าอายุคน:</b> {human_age:.1f} ปี
-            </p>
+            <h2 style='color: #B87333; text-align: center;'>🐹 ผลการคำนวณ</h2>
+            <div style='display: flex; justify-content: space-between; margin-top: 55px;'>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0;'>
+                        <b>อายุแฮมสเตอร์</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{hamster_age}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0; margin-top: 35px;'>
+                        <b>เทียบเท่าอายุคน</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{human_age:.1f}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+            </div>
         </div>
         """
+
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1222,14 +1274,26 @@ class Ui_MainWindow(object):
         human_age = hedgehog_to_human_age(hedgehog_age)
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
-            <h2 style='color: #B87333;'>🦔 ผลการคำนวณ</h2>
-            <p style='font-size: 16px; margin: 10px 0;'>
-                <b>อายุเม่น:</b> {hedgehog_age} ปี<br>
-                <b>เทียบเท่าอายุคน:</b> {human_age:.1f} ปี
-            </p>
+            <h2 style='color: #B87333; text-align: center;'>🦔 ผลการคำนวณ</h2>
+            <div style='display: flex; justify-content: space-between; margin-top: 55px;'>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0;'>
+                        <b>อายุเม่น</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{hedgehog_age}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0; margin-top: 35px;'>
+                        <b>เทียบเท่าอายุคน</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{human_age:.1f}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+            </div>
         </div>
         """
-
+        
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
@@ -1252,13 +1316,26 @@ class Ui_MainWindow(object):
         human_age = squirrel_to_human_age(squirrel_age)
         result = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
-            <h2 style='color: #B87333;'>🐿️ ผลการคำนวณ</h2>
-            <p style='font-size: 16px; margin: 10px 0;'>
-                <b>อายุกระรอก:</b> {squirrel_age} ปี<br>
-                <b>เทียบเท่าอายุคน:</b> {human_age:.2f} ปี
-            </p>
+            <h2 style='color: #B87333; text-align: center;'>🐿️ ผลการคำนวณ</h2>
+            <div style='display: flex; justify-content: space-between; margin-top: 55px;'>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0;'>
+                        <b>อายุกระรอก</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{squirrel_age}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+                <div style='flex: 1; text-align: center; padding: 10px; border-radius: 8px;'>
+                    <p style='font-size: 16px; margin: 5px 0; margin-top: 35px;'>
+                        <b>เทียบเท่าอายุคน</b><br>
+                        <span style='font-size: 44px; color: #B87333;'>{human_age:.1f}</span>
+                        <span style='font-size: 34px;'> ปี</span>
+                    </p>
+                </div>
+            </div>
         </div>
         """
+        
         info = f"""
         <div style='background-color: #FFF8DC; padding: 20px; border-radius: 10px;'>
             <h2 style='color: #B87333;'>📊 ข้อมูลเพิ่มเติม</h2>
