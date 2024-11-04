@@ -994,7 +994,7 @@ class Ui_MainWindow(object):
         self.spinBox_4.setSingleStep(1)
 
         self.spinBox_5.setMinimum(0)  # hedgehog
-        self.spinBox_5.setMaximum(8)
+        self.spinBox_5.setMaximum(7)
         self.spinBox_5.setSingleStep(1)
 
         self.spinBox_6.setMinimum(0)  # bunny
@@ -1029,7 +1029,7 @@ class Ui_MainWindow(object):
         self.pushButton_8.setText(_translate("MainWindow", "คำนวณ"))
         self.label_9.setText(_translate("MainWindow", "อายุแฮมสเตอร์ (0-3 ปี)"))
         self.pushButton_10.setText(_translate("MainWindow", "คำนวณ"))
-        self.label_11.setText(_translate("MainWindow", "อายุเม่น (0-8 ปี)"))
+        self.label_11.setText(_translate("MainWindow", "อายุเม่น (0-7 ปี)"))
         self.pushButton_11.setText(_translate("MainWindow", "คำนวณ"))
         self.label_13.setText(_translate("MainWindow", "อายุกระต่าย (0-16 ปี)"))
         self.pushButton_12.setText(_translate("MainWindow", "คำนวณ"))
