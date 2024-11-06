@@ -274,13 +274,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.textBrowser_2 = QtWidgets.QTextBrowser(self.widget)
-        self.textBrowser_2.setMinimumHeight(400)  # กำหนดความสูงขั้นต่ำ
+        self.textBrowser_2.setMinimumHeight(400)
         self.textBrowser_2.setMaximumHeight(400)
         self.textBrowser_2.setStyleSheet("background-color: rgb(250, 255, 235);")
         self.textBrowser_2.setObjectName("textBrowser_2")
         self.horizontalLayout_8.addWidget(self.textBrowser_2)
         self.textBrowser_5 = QtWidgets.QTextBrowser(self.widget)
-        self.textBrowser_5.setMinimumHeight(400)  # กำหนดความสูงขั้นต่ำ
+        self.textBrowser_5.setMinimumHeight(400)
         self.textBrowser_5.setMaximumHeight(400)
         self.textBrowser_5.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.textBrowser_5.setTabChangesFocus(False)
@@ -289,7 +289,7 @@ class Ui_MainWindow(object):
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         self.textBrowser_2.setSizePolicy(sizePolicy)
         self.textBrowser_5.setSizePolicy(sizePolicy)
-        self.horizontalLayout_8.setStretch(0, 30)  # index 0 คือ textBrowser_2
+        self.horizontalLayout_8.setStretch(0, 30)
         self.horizontalLayout_8.setStretch(1, 70)
         self.verticalLayout_10.addLayout(self.horizontalLayout_8)
         self.verticalLayout_9 = QtWidgets.QVBoxLayout()
@@ -297,7 +297,7 @@ class Ui_MainWindow(object):
         spacerItem4 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_9.addItem(spacerItem4)
         self.textBrowser_7 = QtWidgets.QTextBrowser(self.widget)
-        self.textBrowser_7.setMinimumHeight(220)  # ปรับตัวเลขตามที่ต้องการ
+        self.textBrowser_7.setMinimumHeight(220)
         self.textBrowser_7.setMaximumHeight(220)
         self.textBrowser_7.setStyleSheet("background-color: rgb(250, 255, 235);")
         self.textBrowser_7.setObjectName("textBrowser_7")
@@ -357,7 +357,7 @@ class Ui_MainWindow(object):
         self.textBrowser_6 = QtWidgets.QTextBrowser(self.widget_2)
         self.textBrowser_6.setObjectName("textBrowser_6")
         self.horizontalLayout_9.addWidget(self.textBrowser_6)
-        self.horizontalLayout_9.setStretch(0, 30)  # index 0 คือ textBrowser_2
+        self.horizontalLayout_9.setStretch(0, 30)
         self.horizontalLayout_9.setStretch(1, 70)
         self.verticalLayout_11.addLayout(self.horizontalLayout_9)
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
@@ -365,7 +365,7 @@ class Ui_MainWindow(object):
         spacerItem7 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_8.addItem(spacerItem7)
         self.textBrowser_3 = QtWidgets.QTextBrowser(self.widget_2)
-        self.textBrowser_3.setMinimumHeight(220)  # ปรับตัวเลขตามที่ต้องการ
+        self.textBrowser_3.setMinimumHeight(220)
         self.textBrowser_3.setMaximumHeight(220)
         self.textBrowser_3.setStyleSheet("background-color: rgb(250, 255, 235);")
         self.textBrowser_3.setObjectName("textBrowser_3")
@@ -430,7 +430,7 @@ class Ui_MainWindow(object):
         self.textBrowser_9.setTabChangesFocus(False)
         self.textBrowser_9.setObjectName("textBrowser_9")
         self.horizontalLayout_12.addWidget(self.textBrowser_9)
-        self.horizontalLayout_12.setStretch(0, 30)  # index 0 คือ textBrowser_2
+        self.horizontalLayout_12.setStretch(0, 30)
         self.horizontalLayout_12.setStretch(1, 70)
         self.verticalLayout_12.addLayout(self.horizontalLayout_12)
         self.verticalLayout_15 = QtWidgets.QVBoxLayout()
@@ -438,7 +438,7 @@ class Ui_MainWindow(object):
         spacerItem10 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_15.addItem(spacerItem10)
         self.textBrowser_10 = QtWidgets.QTextBrowser(self.widget_4)
-        self.textBrowser_10.setMinimumHeight(220)  # ปรับตัวเลขตามที่ต้องการ
+        self.textBrowser_10.setMinimumHeight(220)
         self.textBrowser_10.setMaximumHeight(220)
         self.textBrowser_10.setStyleSheet("background-color: rgb(250, 255, 235);")
         self.textBrowser_10.setObjectName("textBrowser_10")
@@ -503,7 +503,7 @@ class Ui_MainWindow(object):
         self.textBrowser_12.setTabChangesFocus(False)
         self.textBrowser_12.setObjectName("textBrowser_12")
         self.horizontalLayout_15.addWidget(self.textBrowser_12)
-        self.horizontalLayout_15.setStretch(0, 30)  # index 0 คือ textBrowser_2
+        self.horizontalLayout_15.setStretch(0, 30)
         self.horizontalLayout_15.setStretch(1, 70)
         self.verticalLayout_16.addLayout(self.horizontalLayout_15)
         self.verticalLayout_19 = QtWidgets.QVBoxLayout()
@@ -511,7 +511,7 @@ class Ui_MainWindow(object):
         spacerItem13 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_19.addItem(spacerItem13)
         self.textBrowser_13 = QtWidgets.QTextBrowser(self.widget_5)
-        self.textBrowser_13.setMinimumHeight(220)  # ปรับตัวเลขตามที่ต้องการ
+        self.textBrowser_13.setMinimumHeight(220)
         self.textBrowser_13.setMaximumHeight(220)
         self.textBrowser_13.setStyleSheet("background-color: rgb(250, 255, 235);")
         self.textBrowser_13.setObjectName("textBrowser_13")
@@ -576,7 +576,7 @@ class Ui_MainWindow(object):
         self.textBrowser_15.setTabChangesFocus(False)
         self.textBrowser_15.setObjectName("textBrowser_15")
         self.horizontalLayout_18.addWidget(self.textBrowser_15)
-        self.horizontalLayout_18.setStretch(0, 30)  # index 0 คือ textBrowser_2
+        self.horizontalLayout_18.setStretch(0, 30)
         self.horizontalLayout_18.setStretch(1, 70)
         self.verticalLayout_20.addLayout(self.horizontalLayout_18)
         self.verticalLayout_23 = QtWidgets.QVBoxLayout()
@@ -584,7 +584,7 @@ class Ui_MainWindow(object):
         spacerItem16 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_23.addItem(spacerItem16)
         self.textBrowser_16 = QtWidgets.QTextBrowser(self.widget_6)
-        self.textBrowser_16.setMinimumHeight(220)  # ปรับตัวเลขตามที่ต้องการ
+        self.textBrowser_16.setMinimumHeight(220)
         self.textBrowser_16.setMaximumHeight(220)
         self.textBrowser_16.setStyleSheet("background-color: rgb(250, 255, 235);")
         self.textBrowser_16.setObjectName("textBrowser_16")
@@ -649,7 +649,7 @@ class Ui_MainWindow(object):
         self.textBrowser_18.setTabChangesFocus(False)
         self.textBrowser_18.setObjectName("textBrowser_18")
         self.horizontalLayout_21.addWidget(self.textBrowser_18)
-        self.horizontalLayout_21.setStretch(0, 30)  # index 0 คือ textBrowser_2
+        self.horizontalLayout_21.setStretch(0, 30)
         self.horizontalLayout_21.setStretch(1, 70)
         self.verticalLayout_24.addLayout(self.horizontalLayout_21)
         self.verticalLayout_27 = QtWidgets.QVBoxLayout()
@@ -657,7 +657,7 @@ class Ui_MainWindow(object):
         spacerItem19 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_27.addItem(spacerItem19)
         self.textBrowser_19 = QtWidgets.QTextBrowser(self.widget_7)
-        self.textBrowser_19.setMinimumHeight(220)  # ปรับตัวเลขตามที่ต้องการ
+        self.textBrowser_19.setMinimumHeight(220)
         self.textBrowser_19.setMaximumHeight(220)
         self.textBrowser_19.setStyleSheet("background-color: rgb(250, 255, 235);")
         self.textBrowser_19.setObjectName("textBrowser_19")
@@ -887,7 +887,7 @@ class Ui_MainWindow(object):
         for spinbox in all_spinboxes:
             spinbox.setStyleSheet(spinbox_style)
 
-        # กำหนดสไตล์สำหรับ Label
+        # กำหนดสไตล์สำหรับ label
         all_labels = [
             self.label_6, self.label_7, self.label_9,
             self.label_11, self.label_13, self.label_15
