@@ -1,3 +1,7 @@
-# PSCP-Project
-The Pet Age Calculator program (PAC). 
-It's a program to calculate your pet age year to human age year and show the information of your pet.
+#  เกี่ยวกับโปรแกรม
+
+โปรเจค Pet Age Calculator (PAC)  เป็นโปรเจคที่ทำการคำนวณอายุปีของสัตว์เลี้ยงให้เป็นอายุปีของมนุษย์ พร้อมทั้งบอกข้อมูลการเลี้ยงดูและช่วงวัยของสัตว์เลี้ยงเหล่านั้น เพื่อให้ผู้ใช้สามารถทราบถึงอายุคร่าวๆ ของสัตว์เลี้ยงของตนได้
+
+# วิธีการติดตั้ง
+
+สามารถดาวน์โหลดไฟล์ "Pet Age Calculator.exe" ลงบนคอมพิวเตอร์ แล้วทำการเปิดโปรแกรมได้เลย 
